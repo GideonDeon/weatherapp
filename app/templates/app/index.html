@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="/static/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Weather  App</title>
+</head>
+<body>
+    <main  class="main">
+       <div class="header">
+        <img src="{% static 'images/weather.png'%}" alt="">
+        <p>Weather Now</p>
+        </div>
+        <div id="accord">
+            <form action="{% url 'weatherapp' %}" method="post" name="search">
+                {% csrf_token %}
+                <input type="text" name="location" placeholder="Enter Location">
+                <br>
+                <button><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+            </form>
+        </div> 
+    </main>
+    
+    <footer class="footer">&copy; 2022 deon</footer>
+    <script type="text/javascript" src="{%static 'js/style.js' %}"></script>
+</body>
+</html>

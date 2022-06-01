@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="/static/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Weather  App</title>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <img src="{% static 'images/weather.png'%}" alt="">
+            <p>Weather Now</p>
+        </div>
+        <div class="hold">
+            <p>{{city}}, {{city_code}} <span id="clickable"><i class="fa-solid fa-angle-down"></i></span></p> 
+        </div>
+        <div id="accordion">
+            <form action="" method="post" name="search">
+                {% csrf_token %}
+                <div id="close"><i class="fa-solid fa-xmark"></i></div>
+                <input type="text" name="location" placeholder="Enter Location">
+                <br>
+                <button><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                <p id="text"></p>
+            </form>
+        </div>
+        <div class="time">
+            <div id="clock"></div>
+            <div id="session"></div>
+        </div>
+        <div class="circle">
+            <div class="circleTurn"></div>
+            <div class="circlewrap">
+                <div class="icon"><img class="icon" src="http://openweathermap.org/img/w/{{weather_icon}}.png" alt="icon"></div>
+                <div  class="temp">{{temp}}&deg;c</div>
+                <div class="feels">Feels like: {{feels_like}}&deg;c</div>
+                <div class="lat"> <p class="lats"><span class="lt">Lat</span>{{lat}}&deg;</p><p class="lons"><span class="ln">Lon</span>{{lon}}&deg;</p></div>
+            </div>
+        </div>
+        <div><p class="conditions">current conditions</p></div>
+        <div class="cond"> 
+            <p>Temperature</p>
+            <p>{{temp}}&deg;C</p>
+            <p>But You Feel This</p>
+            <p>{{feels_like}}&deg;C</p>
+            <p>Weather</p>
+            <p>{{weather}} - {{weather_desc}} - <img src="http://openweathermap.org/img/w/{{weather_icon}}.png" alt="icon" style="margin-bottom: -23px;"></p>
+            <p>Humidity</p>
+            <p>{{humidity}}</p>
+            <p>Pressure</p>
+            <p>{{pressure}}</p>
+            <p>Cloud</p>
+            <p>{{clouds}}</p>
+            <p>Visibility</p>
+            <p>{{visibility}}</p>
+            <p>Wind Speed</p>
+            <p>{{wind}}</p> 
+            <p>Wind Deg</p>
+            <p>{{wind_deg}}&deg;</p> 
+        </div>
+        <div id="map">See Location On Map &nbsp; <i class="fa-solid fa-angle-down"></i></div>
+        <div id="gmap">
+            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q={{city}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </main>
+    
+    <footer>&copy; 2022 deon</footer>
+    <script type="text/javascript" src="{%static 'js/style.js' %}"></script>
+</body>
+</html>

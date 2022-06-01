@@ -1,0 +1,776 @@
+@media (min-width:850px) {
+    body{
+        font-weight: 200;
+        font-family: sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100vh;
+    }
+    main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100%;
+    }
+    .header>img{
+        height: 30px;
+        width: 30px;
+    }
+    .header{
+        background-color: rgba(0, 0, 0, .4);
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .header>p{
+        display: inline-block;
+        color: white;
+        font-family: "consolas";
+        position: relative;
+        top: -7px;
+    }
+    .hold>p{
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    #clickable{
+        cursor: pointer;
+    }
+    #close{
+        cursor: pointer;
+        padding-left: 50px;
+    }
+    #accord{
+        background-color: rgba(255, 255, 255, .3);
+        width: 20%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        padding: 50px;
+    }
+    #accord>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 15px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accord>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accord>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #accordion{
+        background-color: rgba(255, 255, 255, .3);
+        height: 0;
+        width: 30%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        transition: all 0.2s;
+        color: white;
+    }
+    #accordion>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 5px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accordion>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accordion>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #text{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .time{
+        color: white;
+        text-align: center;
+    }
+    .circle{
+        height: 20em;
+        width: 20em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .circleTurn{
+        height: 20em;
+        width: 20em;
+        border-radius: 100%;
+        border: dashed 15px rgba(255, 255, 255, 0.932);
+        position: absolute;
+        left: -6%;
+        transform: rotate(0deg);
+        z-index: -3;
+        animation: turn;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-timing-function: ease;
+    }
+    
+    @keyframes turn{
+        0%{
+            transform: rotate(0deg);
+        }
+        25%{
+            transform: rotate(90deg);
+    
+        }
+        50%{
+            transform: rotate(180deg);
+    
+        }
+        75%{
+            transform: rotate(270deg);
+        }
+        100%{
+            transform: rotate(360deg);
+    
+        }
+    }
+    .circlewrap>div>.icon{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 5em;
+        width:5em;
+        margin-top: 20px;
+        margin-bottom: -30px;
+    }
+    .circlewrap>.temp{
+        color: white;
+        font-size: 6em;
+        text-align: center;
+    }
+    .circlewrap>.feels{
+        color: white;
+        font-size: 1em;
+        text-align: center;
+    }
+    .lat{
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        font-size: 2em;
+    }
+    .ln,.lt{
+        font-size: 0.5em;
+    }
+    .conditions{
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .cond{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 50%;
+        position: relative;
+        left: 70%;
+        transform: translateX(-70%);
+        justify-items: left;
+        color: white;
+        font-family: "consolas";
+    
+    }
+    #map{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        border: solid 2px white;
+        width: 12em;
+        margin-bottom: 20px;
+        cursor: pointer;
+        padding: 10px;
+    
+    }
+    #map:hover{
+        background-color:rgba(128, 128, 128, .5);
+    }
+    #gmap{
+       height: 0;
+       overflow-y: hidden;
+       transition: all 0.2s;
+    }
+    #gmap_canvas{
+        width: 70%; 
+        height: 20em; 
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    footer{
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    
+}
+@media (min-width:550px) and (max-width:849px){
+    body{
+        font-weight: 200;
+        font-family: sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100vh;
+    }
+    main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100%;
+    }
+    .header>img{
+        height: 30px;
+        width: 30px;
+    }
+    .header{
+        background-color: rgba(0, 0, 0, .4);
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .header>p{
+        display: inline-block;
+        color: white;
+        font-family: "consolas";
+        position: relative;
+        top: -7px;
+    }
+    .hold>p{
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    #clickable{
+        cursor: pointer;
+    }
+    #close{
+        cursor: pointer;
+        padding-left: 50px;
+    }
+    #accord{
+        background-color: rgba(255, 255, 255, .3);
+        width: 20%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        padding: 50px;
+    }
+    #accord>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 15px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accord>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accord>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #accordion{
+        background-color: rgba(255, 255, 255, .3);
+        height: 0;
+        width: 40%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        transition: all 0.2s;
+        color: white;
+    }
+    #accordion>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 5px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accordion>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accordion>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #text{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .time{
+        color: white;
+        text-align: center;
+    }
+    .circle{
+        height: 20em;
+        width: 20em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .circleTurn{
+        height: 20em;
+        width: 20em;
+        border-radius: 100%;
+        border: dashed 15px rgba(255, 255, 255, 0.932);
+        position: absolute;
+        left: -6%;
+        transform: rotate(0deg);
+        z-index: -3;
+        animation: turn;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-timing-function: ease;
+    }
+    
+    @keyframes turn{
+        0%{
+            transform: rotate(0deg);
+        }
+        25%{
+            transform: rotate(90deg);
+    
+        }
+        50%{
+            transform: rotate(180deg);
+    
+        }
+        75%{
+            transform: rotate(270deg);
+        }
+        100%{
+            transform: rotate(360deg);
+    
+        }
+    }
+    .circlewrap>div>.icon{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 5em;
+        width:5em;
+        margin-top: 20px;
+        margin-bottom: -30px;
+    }
+    .circlewrap>.temp{
+        color: white;
+        font-size: 6em;
+        text-align: center;
+    }
+    .circlewrap>.feels{
+        color: white;
+        font-size: 1em;
+        text-align: center;
+    }
+    .lat{
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        font-size: 2em;
+    }
+    .ln,.lt{
+        font-size: 0.5em;
+    }
+    .conditions{
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .cond{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 70%;
+        position: relative;
+        left: 80%;
+        transform: translateX(-80%);
+        justify-items: left;
+        color: white;
+        font-family: "consolas";
+    
+    }
+    #map{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        border: solid 2px white;
+        width: 12em;
+        margin-bottom: 20px;
+        cursor: pointer;
+        padding: 10px;
+    
+    }
+    #map:hover{
+        background-color:rgba(128, 128, 128, .5);
+    }
+    #gmap{
+       height: 0;
+       overflow-y: hidden;
+       transition: all 0.2s;
+    }
+    #gmap_canvas{
+        width: 70%; 
+        height: 20em; 
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    footer{
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    
+}
+@media (max-width:549px){
+    body{
+        font-weight: 200;
+        font-family: sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100vh;
+    }
+    main{
+        background-color: rgba(0, 0, 0, .6);
+        background-image: url('/static/images/bckg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        height: 100%;
+    }
+    .header>img{
+        height: 30px;
+        width: 30px;
+    }
+    .header{
+        background-color: rgba(0, 0, 0, .4);
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .header>p{
+        display: inline-block;
+        color: white;
+        font-family: "consolas";
+        position: relative;
+        top: -7px;
+    }
+    .hold>p{
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    #clickable{
+        cursor: pointer;
+    }
+    #close{
+        cursor: pointer;
+        padding-left: 1em;
+    }
+    #accord{
+        background-color: rgba(255, 255, 255, .3);
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        padding: 50px;
+    }
+    #accord>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 15px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accord>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accord>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #accordion{
+        background-color: rgba(255, 255, 255, .3);
+        height: 0;
+        width: 50%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        transition: all 0.2s;
+        color: white;
+    }
+    #accordion>form>input{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2em;
+        margin-bottom: 5px;
+        border: solid 1px black;
+        border-radius: 10%;
+    }
+    #accordion>form>button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #accordion>form>button:hover{
+        background-color: grey;
+        color: white;
+    }
+    #text{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .time{
+        color: white;
+        text-align: center;
+    }
+    .circle{
+        height: 18em;
+        width: 18em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .circleTurn{
+        height: 18em;
+        width: 18em;
+        border-radius: 100%;
+        border: dashed 15px rgba(255, 255, 255, 0.932);
+        position: absolute;
+        left: -6%;
+        transform: rotate(0deg);
+        z-index: -3;
+        animation: turn;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-timing-function: ease;
+    }
+    
+    @keyframes turn{
+        0%{
+            transform: rotate(0deg);
+        }
+        25%{
+            transform: rotate(90deg);
+    
+        }
+        50%{
+            transform: rotate(180deg);
+    
+        }
+        75%{
+            transform: rotate(270deg);
+        }
+        100%{
+            transform: rotate(360deg);
+    
+        }
+    }
+    .circlewrap>div>.icon{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4em;
+        width:4em;
+        margin-top: 25px;
+        margin-bottom: -30px;
+    }
+    .circlewrap>.temp{
+        color: white;
+        font-size: 5em;
+        text-align: center;
+    }
+    .circlewrap>.feels{
+        color: white;
+        font-size: 1em;
+        text-align: center;
+    }
+    .lat{
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        font-size: 2em;
+    }
+    .ln,.lt{
+        font-size: 0.5em;
+    }
+    .conditions{
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 0.9em;
+    }
+    .cond{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+        justify-items: left;
+        color: white;
+        font-family: "consolas";
+        font-size: 0.9em;
+        padding: 5px;
+        position: relative;
+        left: 4%;
+    
+    }
+    #map{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        border: solid 2px white;
+        width: 12em;
+        margin-bottom: 20px;
+        cursor: pointer;
+        padding: 10px;
+    
+    }
+    #map:hover{
+        background-color:rgba(128, 128, 128, .5);
+    }
+    #gmap{
+       height: 0;
+       overflow-y: hidden;
+       transition: all 0.2s;
+    }
+    #gmap_canvas{
+        width: 70%; 
+        height: 20em; 
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    footer{
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    
+}
