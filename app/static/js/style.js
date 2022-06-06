@@ -8,7 +8,6 @@ $('#map').click(function(){
     $('#gmap').css('height','20em')
 })
 
-
 function time(){
     let date = new Date();
     let hh = date.getHours();

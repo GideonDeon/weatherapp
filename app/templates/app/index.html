@@ -17,12 +17,19 @@
         <img src="{% static 'images/weather.png'%}" alt="">
         <p>Weather Now</p>
         </div>
+            {% if messages %}
+                {% for message in messages%}
+                    <div id="message" class="message">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif%}
         <div id="accord">
             <form action="{% url 'weatherapp' %}" method="post" name="search">
                 {% csrf_token %}
                 <input type="text" name="location" placeholder="Enter Location">
                 <br>
-                <button><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                <button id="btn"  class="btn"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
             </form>
         </div> 
     </main>
