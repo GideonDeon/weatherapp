@@ -693,7 +693,7 @@
         border-radius: 100%;
         border: dashed 15px rgba(255, 255, 255, 0.932);
         position: absolute;
-        left: -6%;
+        left: -3%;
         transform: rotate(0deg);
         z-index: -3;
         animation: turn;
