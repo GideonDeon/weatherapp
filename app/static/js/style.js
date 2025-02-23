@@ -26,7 +26,8 @@ function time(){
     let sess = `${session}`
     document.getElementById("session").innerHTML = sess
    
-    setTimeout( function(){time()},1000)  
+    setTimeout( function(){time()},1000) 
+     
     if(hh<12){
         text.innerHTML = 'Good Morning!'
     }else if(hh>=17){
